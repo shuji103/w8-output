@@ -16,7 +16,7 @@ body {
     background-color: #000;
 
 }
-label, input, textarea, select, button {
+input, button {
     /* カーソルが指マークになる */
     cursor: pointer;
 }
@@ -81,12 +81,35 @@ grid
     width: calc((100% - (30px * 5)) / 6);
 }
 
+/*
+section
+*/
+.section {
+    padding: 30px 15px;
+}
+
+.section-headline {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 5px;
+    margin: 0 0 10px;
+}
+@media screen and (max-width: 768px){
+    .section {
+        /* ちょっとでかいから */
+        padding: 20px 10px;
+    }
+    .section-headline {
+        font-size: 20px;
+        margin: 0 0 20px;
+    }
+}
 
 /*
 aside
 */
 .aside {
-    /* 下に空間 */
+    /* 左右上下に空間 */
     margin: 100px 250px;
     /* 左右上下の間に空間 */
     padding: 25px;
@@ -107,17 +130,19 @@ aside
 button
 */
 .button {
-    /* 上下左右にpadding・marginを調整可能に */
-    display: inline-block;
     color: #fff;
     font-size: 20px;
     font-weight: bold;
-    /* ボタンの背景を紫に */
-    background-color: #dc4fdc;
     text-align: center;
+
+}
+.grid-button {
+    /* 上下左右にpadding・marginを調整可能に */
+    display: inline-block;
+    background-color: #dc4fdc;
+    border-radius: 15px;
     /* 下線をなくす */
     text-decoration: none;
-    border-radius: 15px;
     padding: 40px 0;
     /* 外側の余白は作らない（gapで管理） */
     margin: 0;
@@ -125,10 +150,109 @@ button
 
 
 }
+/* 色違いのボタンを設定　(.button-submission） */
+.button.sign-up-button {
+    background-color: #125ec8;
+}
 
 @media screen and (max-width: 768px){
     .button {
         padding: 10px 0 ;
         font-size: 15px;
     }
+}
+
+/*
+ログインフォーム
+ */
+/*
+input
+ */
+ .input {
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    border: 0.5px solid hsl(210, 1%, 42%);
+    background-color: hsl(237, 14%, 27%);
+    max-width: 500px;
+    width: 100%;
+}
+@media screen and (max-width: 768px){
+    .input {
+        /* 特にそこまで多くの枠を設けないという設定に。 */
+        min-width: auto;
+        /* 小さすぎると見た目が整わないから横幅100% */
+        /* 最低でも500pxと入れちゃったから、スマホの時はいらない。 */
+        width: 100%;
+    }
+}
+
+/*
+form
+ */
+/* tableタグのデフォルトのdisplay: tableをなくして縦並びに */
+.form-table,
+.form-table tbody,
+.form-table tr,
+.form-table th,
+.form-table td {
+    display: block;
+}
+.form {
+    margin: 0 auto;
+    padding: 10px;
+    /* 最大でも横幅500pxに */
+    max-width: 500px;
+    border-radius: 10px;
+    border: 0.5px solid hsl(180, 1%, 24%);
+    background-color: hsl(235, 34%, 15%);
+}
+/* .form-table {} */
+/* .form-table tr {} */
+.form-table th {
+    padding: 5px;
+    /* centerがデフォルトで入っているから */
+    text-align: left;
+}
+.form-table td {
+    padding: 5px;
+}
+
+.form-button {
+    padding: 7px 5px;
+    margin-top: 10px;
+}
+.sign-up-button {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.link {
+    /* 調整 */
+    margin-top: 10px;
+    padding: 10px 5px;
+}
+.sign-up-link {
+    /* _が勝手に入るからnoneで消す */
+    text-decoration: none;
+    color: #125ec8;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    .form {
+        min-width: auto;
+        max-width: 50%;
+    }
+    .button {
+        /* 特にそこまで多くの枠を設けないという設定に。 */
+        min-width: auto;
+        /* 小さすぎると見た目が整わないから横幅100% */
+        /* 最低でも500pxと入れちゃったから、スマホの時はいらない。 */
+        width: 100%;
+    }
+
 }
