@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/*
+Base style
+*/
+/* bodyにデフォルトの設定 */
+body {
+    /* webフォントのfont-familyをcssに設定 */
+    font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 15px;
+    /* 行間 */
+    line-height: 1.5;
+    /* フォントの色を白に */
+    color: #fff;
+    /* 背景を黒に */
+    background-color: #000;
+
+}
+label, input, textarea, select, button {
+    /* カーソルが指マークになる */
+    cursor: pointer;
+}
+button {
+    /* buttonタグのデフォルトのborderのスタイルをリセット */
+    border: 0;
+}
+
+/*
+grid
+*/
+
+.grid {
+    /* ulタグのデフォルトのpaddingとかmarginをリセット */
+    margin: 0;
+    padding: 0;
+    /* 子要素を横並びに */
+    display: flex;
+    flex-wrap: wrap;
+    /* 子要素の中央ではなく縦方向の揃え */
+    align-items: stretch;
+    /* 中央ではなく左端から詰める（外側に余白を作らない） */
+    justify-content: flex-start;
+    /* アイテム間の溝（内側の余白） */
+    gap: 30px;
+    /* 背景 */
+    background-color: #763f96;
+    /* 背景に細かい斜線とを入れる */
+    background: repeating-linear-gradient(
+        135deg,
+        rgba(128, 0, 128, 0.2) 0px,    /* 薄い紫 (透明度あり) 開始 */
+        rgba(128, 0, 128, 0.2) 5px,   /* 20pxまで塗りつぶし */
+        rgba(208, 119, 230, 0.4) 5px,  /* 明るめ紫のアクセント　開始 */
+        rgba(208, 119, 230, 0.4) 7px   /* 40pxまでアクセント → ここまでで1パターン */
+        );
+    border-radius: 15px;
+}
+
+.grid-item {
+    /* liタグのデフォルトのリスト記号をなくす */
+    list-style: none;
+    /* 外側余白を持たない */
+    margin: 0;
+}
+
+/* columnごとのgrid-itemの横幅50%、25%、16.66%を設定 */
+
+.grid-col-4 > .grid-item {
+    /* gapがあっても1行に4つ並ぶように幅を計算 */
+    /* 計算
+    - 100%: 親要素（ul）の横幅
+    - 30px: 4columnの場合gap(30px)が3個できるため、(30px * 3)= 90px
+    - 100% - 90px:  「ulの横幅 - gapの合計」 つまり、ボタンが使える残りの幅
+    - ボタンが使える残りの幅を4等分
+    */
+    width: calc((100% - (30px * 3)) / 4);
+}
+.grid-col-2 > .grid-item {
+    width: calc((100% - (30px * 1)) / 2);
+}
+.grid-col-6 > .grid-item {
+    width: calc((100% - (30px * 5)) / 6);
+}
+
+
+/*
+aside
+*/
+.aside {
+    /* 下に空間 */
+    margin: 100px 250px;
+    /* 左右上下の間に空間 */
+    padding: 25px;
+    text-align: center;
+    /* 背景を紺に */
+    background-color: #1c0c4d;
+}
+
+@media screen and (max-width: 768px){
+    .aside {
+        /* ちょっとでかいから */
+        margin: 20px 40px;
+        padding: 10px;
+    }
+}
+
+/*
+button
+*/
+.button {
+    /* 上下左右にpadding・marginを調整可能に */
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    /* ボタンの背景を紫に */
+    background-color: #dc4fdc;
+    text-align: center;
+    /* 下線をなくす */
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 40px 0;
+    /* 外側の余白は作らない（gapで管理） */
+    margin: 0;
+    width: 100%;
+
+
+}
+
+@media screen and (max-width: 768px){
+    .button {
+        padding: 10px 0 ;
+        font-size: 15px;
+    }
+}
