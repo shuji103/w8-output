@@ -31,10 +31,11 @@
     <!--
     1. 横4 × 縦4のコーディング
     -->
+    <!-- タイトルはつけないため、asideタグにgridを設定 -->
      <aside class="aside">
-        <!-- gridとgrid-col-4の2つのクラスを設定  -->
         <ul class="grid grid-col-4">
             <li class="grid-item">
+                <!-- 流用できるbuttonと、grid内のgrid-buttonのクラスを設定 -->
                 <a href="#" class="button grid-button">01</a>
             </li>
             <li class="grid-item">
@@ -89,7 +90,6 @@
     2. 横2 × 縦2のコーディング
     -->
     <aside class="aside">
-        <!-- gridとgrid-col-2の2つのクラスを設定  -->
         <ul class="grid grid-col-2">
             <li class="grid-item">
                 <a href="#" class="button grid-button">01</a>
@@ -111,7 +111,6 @@
     3. 横6 × 縦1のコーディング
     -->
     <aside class="aside">
-        <!-- gridとgrid-col-2の2つのクラスを設定  -->
         <ul class="grid grid-col-6">
             <li class="grid-item">
                 <a href="#" class="button grid-button">01</a>
@@ -138,7 +137,7 @@
     ログインフォームのコーディング
     -->
     <section class="section">
-        <!-- formタグ -->
+        <!-- formタグの中に見出し、テーブル、ボタンを配置 -->
         <form class="form" action="">
             <h1 class="section-headline">Sign in to your account</h1>
             <table class="form-table">
@@ -164,14 +163,13 @@
                 </tr>
             </table>
             <!-- Sign inのボタン -->
-            <!-- さっき作ったボタンを使いまわしたい時は、classにbuttonと付与すると、スタイルを流用できる
-            （buttonのスタイルはすでに設定してるから、スタイルが少し微妙に違うが近いのができた）-->
-            <!-- ボタンの位置を修正したいから、divタグで囲って、class（form-button）を用意 -->
-            <!-- 色を変えたいから、さらにbuttonのclassを拡張したclass（button-submission）を追記 -->
+            <!-- ボタンの位置を修正するため、divタグで囲う -->
             <div class="form-button">
+                <!-- 共通のbuttonと、formタグ内のsign-up-buttonのクラスを設定 -->
                 <button class="button sign-up-button" type="submit">Sign in</button>
             </div>
-
+            <!-- リンク部分 -->
+             <!-- ボタンの位置を修正するため、divタグで囲う -->
             <div class="link">
                 Don't have an account yet? <a href="#" class="sign-up-link">Sign up</a>
             </div>

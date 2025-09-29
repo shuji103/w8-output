@@ -7,6 +7,7 @@ Base style
 body {
     /* webフォントのfont-familyをcssに設定 */
     font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    /* フォントサイズ */
     font-size: 15px;
     /* 行間 */
     line-height: 1.5;
@@ -28,33 +29,36 @@ button {
 /*
 grid
 */
-
+/* ulタグ部分 */
 .grid {
-    /* ulタグのデフォルトのpaddingとかmarginをリセット */
+    /* ulタグのデフォルトでついているpaddingとmarginをリセット */
     margin: 0;
     padding: 0;
     /* 子要素を横並びに */
     display: flex;
+    /* 子要素を折り返す */
     flex-wrap: wrap;
-    /* 子要素の中央ではなく縦方向の揃え */
+    /* 子要素を中央ではなく縦方向に揃える */
     align-items: stretch;
-    /* 中央ではなく左端から詰める（外側に余白を作らない） */
+    /* 子要素を中央ではなく左端から詰める（外側に余白を作らないため） */
     justify-content: flex-start;
-    /* アイテム間の溝（内側の余白） */
+    /* 子要素間の隙間（内側の余白） */
     gap: 30px;
     /* 背景 */
     background-color: #763f96;
-    /* 背景に細かい斜線とを入れる */
+    /* 背景に細かい斜線を入れる（繰り返しの線形グラデーション） */
     background: repeating-linear-gradient(
-        135deg,
-        rgba(128, 0, 128, 0.2) 0px,    /* 薄い紫 (透明度あり) 開始 */
-        rgba(128, 0, 128, 0.2) 5px,   /* 20pxまで塗りつぶし */
-        rgba(208, 119, 230, 0.4) 5px,  /* 明るめ紫のアクセント　開始 */
-        rgba(208, 119, 230, 0.4) 7px   /* 40pxまでアクセント → ここまでで1パターン */
+        135deg, /* 45度の右斜め線 */
+        /* 以下ひとまとまりで1パターン, これを繰り返す */
+        rgba(128, 0, 128, 0.2) 0px,    /* 透明度のある濃い紫, 開始位置 */
+        rgba(128, 0, 128, 0.2) 5px,   /* 同じ色, 20pxまで塗りつぶし */
+        rgba(208, 119, 230, 0.4) 5px,  /* アクセントとなる明るい紫, 開始位置 */
+        rgba(208, 119, 230, 0.4) 7px   /* 同じ色, 40pxまで塗りつぶし */
         );
     border-radius: 15px;
 }
 
+/* liタグ部分 */
 .grid-item {
     /* liタグのデフォルトのリスト記号をなくす */
     list-style: none;
@@ -62,14 +66,13 @@ grid
     margin: 0;
 }
 
-/* columnごとのgrid-itemの横幅50%、25%、16.66%を設定 */
-
+/* columnごとのgrid-itemの横幅を設定 */
 .grid-col-4 > .grid-item {
     /* gapがあっても1行に4つ並ぶように幅を計算 */
     /* 計算
-    - 100%: 親要素（ul）の横幅
+    - 100%: 親要素（ulタグ）の横幅
     - 30px: 4columnの場合gap(30px)が3個できるため、(30px * 3)= 90px
-    - 100% - 90px:  「ulの横幅 - gapの合計」 つまり、ボタンが使える残りの幅
+    - 100% - 90px:  「ulタグの横幅 - gapの合計」 つまり、ボタンが使える残りの幅
     - ボタンが使える残りの幅を4等分
     */
     width: calc((100% - (30px * 3)) / 4);
@@ -85,23 +88,26 @@ grid
 section
 */
 .section {
+    /* sectionタグ全体を見やすく */
     padding: 30px 15px;
 }
 
 .section-headline {
     font-size: 30px;
     font-weight: bold;
-    padding: 10px 5px;
-    margin: 0 0 10px;
+    /* h1, table, button, divを全て左に揃えるために調整 */
+    padding: 0 5px;
+    /* 縦に並ぶ要素との間をあける */
+    margin: 10px 0;
 }
 @media screen and (max-width: 768px){
     .section {
-        /* ちょっとでかいから */
+        /* 余白を小さくして、sectionタグ全体を見やすく */
         padding: 20px 10px;
     }
     .section-headline {
+        /* 文字を小さく */
         font-size: 20px;
-        margin: 0 0 20px;
     }
 }
 
@@ -109,19 +115,20 @@ section
 aside
 */
 .aside {
-    /* 左右上下に空間 */
+    /* 上下左右を調整して、asideタグ全体を見やすく */
     margin: 100px 250px;
-    /* 左右上下の間に空間 */
+    /* ulタグの周りから紺の背景を別途つけるため、上下左右の間を調整 */
     padding: 25px;
+    /* 子要素を中央揃え */
     text-align: center;
     /* 背景を紺に */
     background-color: #1c0c4d;
 }
-
 @media screen and (max-width: 768px){
     .aside {
-        /* ちょっとでかいから */
+        /* 余白を小さくして、asideタグ全体を見やすく */
         margin: 20px 40px;
+        /* 紺の背景を小さくするため、ulタグの周りを調整 */
         padding: 10px;
     }
 }
@@ -129,35 +136,34 @@ aside
 /*
 button
 */
+/* ボタンのテキスト部分 */
 .button {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
+    /* ボタンのテキストを中央に */
     text-align: center;
 
 }
 .grid-button {
-    /* 上下左右にpadding・marginを調整可能に */
+    /* 上下にpadding・marginを調整可能に */
     display: inline-block;
     background-color: #dc4fdc;
     border-radius: 15px;
     /* 下線をなくす */
     text-decoration: none;
-    padding: 40px 0;
-    /* 外側の余白は作らない（gapで管理） */
+    /* ボタン部分の上下の間を調整 */
+    padding: 30px 0;
+    /* 外側の余白は0にして、gapで管理 */
     margin: 0;
+    /* 横幅を親要素（liタグ）の幅に合わせる */
     width: 100%;
-
-
 }
-/* 色違いのボタンを設定　(.button-submission） */
-.button.sign-up-button {
-    background-color: #125ec8;
-}
-
 @media screen and (max-width: 768px){
-    .button {
+    .grid-button {
+        /* 上下の間を調整 */
         padding: 10px 0 ;
+        /* 文字を小さく */
         font-size: 15px;
     }
 }
@@ -168,21 +174,25 @@ button
 /*
 input
  */
+/* 入力部分 */
  .input {
     color: #fff;
     border-radius: 5px;
+    /* 入力部分の上下左右の間を調整 */
     padding: 10px;
+    /* 枠線 */
     border: 0.5px solid hsl(210, 1%, 42%);
     background-color: hsl(237, 14%, 27%);
+    /* 横幅を最大でも500pxまでに */
     max-width: 500px;
+    /* 横幅を親要素（tdタグ）の幅に合わせる */
     width: 100%;
 }
 @media screen and (max-width: 768px){
     .input {
-        /* 特にそこまで多くの枠を設けないという設定に。 */
+        /* 横幅の最小は自動で小さくなるように */
         min-width: auto;
-        /* 小さすぎると見た目が整わないから横幅100% */
-        /* 最低でも500pxと入れちゃったから、スマホの時はいらない。 */
+        /* 横幅を親要素（tdタグ）の幅に合わせる */
         width: 100%;
     }
 }
@@ -199,9 +209,11 @@ form
     display: block;
 }
 .form {
+    /* 左右自動でmarginを均等配分して、親要素（sectionタグ）の中央に配置 */
     margin: 0 auto;
+    /* formタグ全体を見やすく */
     padding: 10px;
-    /* 最大でも横幅500pxに */
+    /* formタグ自体の横幅をinputやsign-up-buttonの最大横幅と同じmax-width: 500pxにすることで、左右の横幅を揃えて中央揃えに */
     max-width: 500px;
     border-radius: 10px;
     border: 0.5px solid hsl(180, 1%, 24%);
@@ -210,33 +222,41 @@ form
 /* .form-table {} */
 /* .form-table tr {} */
 .form-table th {
-    padding: 5px;
-    /* centerがデフォルトで入っているから */
+    /* h1, table, button, divを全て左に揃えるために調整 */
+    padding: 0 5px;
+    /* 縦に並ぶ要素との間をあける */
+    margin-top: 5px;
+    /* thタグのデフォルトのtext-align: center;をleftにして、左揃えに */
     text-align: left;
 }
 .form-table td {
-    padding: 5px;
+    /* thと同様に調整 */
+    padding: 0 5px;
+    margin-top: 5px;
 }
 
 .form-button {
-    padding: 7px 5px;
-    margin-top: 10px;
+    /* thと同様に調整 */
+    padding: 0 5px;
+    margin-top: 20px;
 }
 .sign-up-button {
+    background-color: #125ec8;
     border-radius: 10px;
     padding: 10px;
-    width: 100%;
-    max-width: 500px;
     text-align: center;
+    /* inputと同様に横幅を調整 */
+    max-width: 500px;
+    width: 100%;
 }
 
 .link {
-    /* 調整 */
-    margin-top: 10px;
-    padding: 10px 5px;
+    /* thと同様に調整 */
+    margin: 10px 0;
+    padding: 0 5px;
 }
 .sign-up-link {
-    /* _が勝手に入るからnoneで消す */
+    /* aタグのデフォルトの下線をnoneで消す */
     text-decoration: none;
     color: #125ec8;
     font-weight: bold;
@@ -244,15 +264,17 @@ form
 
 @media screen and (max-width: 768px){
     .form {
+        /* inputのレスポンシブ対応と同様に調整 */
         min-width: auto;
-        max-width: 50%;
+        /* 親要素（sectionタグ）の半分の幅にする（sectionタグの横幅は画面一杯だからwidth: 100%） */
+        width: 50%;
     }
-    .button {
-        /* 特にそこまで多くの枠を設けないという設定に。 */
+    .sign-up-button {
+        /* inputのレスポンシブ対応と同様に調整 */
         min-width: auto;
-        /* 小さすぎると見た目が整わないから横幅100% */
-        /* 最低でも500pxと入れちゃったから、スマホの時はいらない。 */
         width: 100%;
+        /* 文字を小さく */
+        font-size: 15px;
     }
 
 }
