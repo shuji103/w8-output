@@ -140,14 +140,13 @@ aside
 /*
 button
 */
-/* ボタンのテキスト部分 */
+/* ボタンのテキスト部分（グリッドレイアウト・ログインフォーム共通） */
 .button {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
     /* ボタンのテキストを中央に */
     text-align: center;
-
 }
 .grid-button {
     /* 上下にpadding・marginを調整可能に */
@@ -162,7 +161,12 @@ button
     margin: 0;
     /* 横幅を親要素（liタグ）の幅に合わせる */
     width: 100%;
+    transition: background-color .5s;
 }
+.grid-button:hover {
+    background-color: #b541b5;;
+}
+
 @media screen and (max-width: 768px){
     .grid-button {
         /* 上下の間を調整 */
@@ -253,6 +257,10 @@ form
     /* inputと同様に横幅を調整 */
     max-width: 500px;
     width: 100%;
+    transition: background-color .5s;
+}
+.sign-in-button:hover {
+    background-color: #0e4ea8;;
 }
 
 .link {
