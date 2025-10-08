@@ -84,43 +84,15 @@ grid
     width: calc((100% - (30px * 5)) / 6);
 }
 
-/*
-section
-*/
-.section {
-    /* sectionタグ全体を見やすく */
-    padding: 30px 15px;
-}
-
-.section-headline {
-    font-size: 30px;
-    font-weight: bold;
-    /* h1, table, button, divを全て左に揃えるために調整 */
-    padding: 0 5px;
-    /* 縦に並ぶ要素との間をあける */
-    margin: 10px 0 20px;
-}
-@media screen and (max-width: 768px){
-    .section {
-        /* 余白を小さくして、sectionタグ全体を見やすく */
-        padding: 20px 10px;
-    }
-    .section-headline {
-        /* 文字を小さく */
-        font-size: 20px;
-        /* 余白の調整 */
-        margin: 5px 0 10px;
-    }
-}
 
 /*
-aside
+grid-layout
 */
-.aside {
+.grid-layout {
     max-width: 780px;
-    /* 上下左右を調整して、asideタグ全体を見やすく */
+    /* 上下左右を調整して、divタグ全体を見やすく */
     width: 100%;
-    margin: 100px auto;
+    margin: 100px auto 0;
     /* ulタグの周りから紺の背景を別途つけるため、上下左右の間を調整 */
     padding: 25px;
     /* 子要素を中央揃え */
@@ -131,11 +103,11 @@ aside
     border: 0.5px solid hsl(180, 1%, 24%);
 }
 @media screen and (max-width: 768px){
-    .aside {
+    .grid-layout {
         max-width: 400px;
-        /* 余白を小さくして、asideタグ全体を見やすく */
+        /* 余白を小さくして、divタグ全体を見やすく */
         width: 100%;
-        margin: 20px auto;
+        margin: 50px auto 0;
         /* 紺の背景を小さくするため、ulタグの周りを調整 */
         padding: 10px;
     }
@@ -221,16 +193,25 @@ form
     display: block;
 }
 .form {
-    /* 左右自動でmarginを均等配分して、親要素（sectionタグ）の中央に配置 */
-    margin: 0 auto;
-    /* formタグ全体を見やすく */
-    padding: 25px;
     /* formタグ自体の横幅を、inputやsign-up-buttonの最大横幅と同じ(max-width: 500px)にすることで、
     formタグと、中の要素の左右の横幅を揃えて中央揃えに */
     max-width: 500px;
+    width: 100%;
+    /* 左右自動でmarginを均等配分して、親要素（sectionタグ）の中央に配置 */
+    margin: 100px auto;
+    /* formタグ全体を見やすく */
+    padding: 25px;
     border-radius: 10px;
     border: 0.5px solid hsl(180, 1%, 24%);
     background-color: hsl(235, 34%, 15%);
+}
+.form-headline {
+    font-size: 30px;
+    font-weight: bold;
+    /* h1, table, button, divを全て左に揃えるために調整 */
+    padding: 0 5px;
+    /* 縦に並ぶ要素との間をあける */
+    margin: 10px 0 20px;
 }
 /* .form-table {} */
 /* .form-table tr {} */
@@ -281,12 +262,18 @@ form
 
 @media screen and (max-width: 768px){
     .form {
+        /* 横幅の調整 */
+        max-width: 250px;
+        width: 100%;
+        margin: 50px auto;
         /* 余白の調整 */
         padding: 10px;
-        /* inputのレスポンシブ対応と同様に幅を調整 */
-        min-width: auto;
-        /* 親要素（sectionタグ）の半分の幅にする（sectionタグの横幅は画面一杯だからwidth: 100%） */
-        width: 50%;
+    }
+    .form-headline {
+        /* 文字を小さく */
+        font-size: 20px;
+        /* 余白の調整 */
+        margin: 5px 0 10px;
     }
     /* 余白の調整 */
     .form-table th {
