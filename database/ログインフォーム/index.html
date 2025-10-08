@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--webページのタイトル-->
+    <title>ログインフォーム</title>
+    <!--雛形にはdescriptionがないため追記-->
+    <meta name="description" content="sample text sample text sample text sample text sample text sample text ...">
+
+    <!-- webフォントのリンク -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- style.cssとsanitize.cssの読み込み -->
+    <link rel="stylesheet" href="./assets/css/sanitize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+    <!--
+    ログインフォームのコーディング
+    -->
+    <!-- formタグの中に見出し、テーブル、ボタンを配置 -->
+    <form class="form" action="">
+        <h1 class="form-headline">Sign in to your account</h1>
+        <table class="form-table">
+            <tr>
+                <th>
+                    <label for="email">
+                        Your email
+                    </label>
+                </th>
+                <td>
+                    <input class="input" type="email" id="email" placeholder="name@company.com">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="password">
+                        Password
+                    </label>
+                </th>
+                <td>
+                    <input class="input" type="password" id="password" placeholder="••••••••">
+                </td>
+            </tr>
+        </table>
+        <!-- Sign inのボタン -->
+        <!-- ボタンの位置を修正するため、divタグで囲う -->
+        <div class="form-button">
+            <!-- 共通のbuttonと、formタグ内のsign-in-buttonのクラスを設定 -->
+            <button class="button sign-in-button" type="submit">Sign in</button>
+        </div>
+        <!-- リンク部分 -->
+            <!-- ボタンの位置を修正するため、divタグで囲う -->
+        <div class="link">
+            Don't have an account yet? <a href="#" class="sign-up-link">Sign up</a>
+        </div>
+    </form>
+
+</body>
+</html>

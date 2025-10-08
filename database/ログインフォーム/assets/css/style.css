@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+/*
+Base style
+*/
+/* bodyにデフォルトの設定 */
+body {
+    /* webフォントのfont-familyをcssに設定 */
+    font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    /* フォントサイズ */
+    font-size: 15px;
+    /* 行間 */
+    line-height: 1.5;
+    /* フォントの色を白に */
+    color: #fff;
+    /* 背景を黒に */
+    background-color: #000;
+
+}
+input, button {
+    /* カーソルが指マークになる */
+    cursor: pointer;
+}
+button {
+    /* buttonタグのデフォルトのborderのスタイルをリセット */
+    border: 0;
+}
+
+/*
+button
+*/
+/* ボタンのテキスト部分（グリッドレイアウト・ログインフォーム共通） */
+.button {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    /* ボタンのテキストを中央に */
+    text-align: center;
+}
+
+/*
+ログインフォーム
+ */
+/*
+input
+ */
+/* 入力部分 */
+ .input {
+    color: #fff;
+    border-radius: 5px;
+    /* 入力部分の上下左右の間を調整 */
+    padding: 10px;
+    /* 枠線 */
+    border: 0.5px solid hsl(210, 1%, 42%);
+    background-color: hsl(237, 14%, 27%);
+    /* 横幅を最大でも500pxまでに */
+    max-width: 500px;
+    /* 横幅を親要素（tdタグ）の幅に合わせる */
+    width: 100%;
+}
+@media screen and (max-width: 768px){
+    .input {
+        /* 横幅の最小は自動で小さくなるように */
+        min-width: auto;
+        /* 横幅を親要素（tdタグ）の幅に合わせる */
+        width: 100%;
+    }
+}
+
+/*
+form
+ */
+/* tableタグのデフォルトのdisplay: tableをなくして縦並びに */
+.form-table,
+.form-table tbody,
+.form-table tr,
+.form-table th,
+.form-table td {
+    display: block;
+}
+.form {
+    /* formタグ全体の「横幅」を、inputやsign-up-buttonの最大横幅と同じ(max-width: 500px)にすることで、
+    全体（form）と中身（input, sign-up-button）の左右の「横幅」を揃え、中央揃えに */
+    max-width: 500px;
+    width: 100%;
+    /* 左右自動でmarginを均等配分して、親要素（sectionタグ）の中央に配置 */
+    margin: 100px auto;
+    /* formタグ全体を見やすく */
+    padding: 25px;
+    border-radius: 10px;
+    border: 0.5px solid hsl(180, 1%, 24%);
+    background-color: hsl(235, 34%, 15%);
+}
+.form-headline {
+    font-size: 30px;
+    font-weight: bold;
+    /* h1, table, button, divを全て左に揃えるために調整 */
+    padding: 0 5px;
+    /* 縦に並ぶ要素との間をあける */
+    margin: 10px 0 20px;
+}
+/* .form-table {} */
+/* .form-table tr {} */
+.form-table th {
+    /* h1, table, button, divを全て左に揃えるために調整 */
+    padding: 0 5px;
+    /* 縦に並ぶ要素との間をあける */
+    margin-top: 20px;
+    /* thタグのデフォルトのtext-align: center;をleftにして、左揃えに */
+    text-align: left;
+}
+.form-table td {
+    /* thと同様に調整 */
+    padding: 0 5px;
+    margin-top: 10px;
+}
+
+.form-button {
+    /* thと同様に調整 */
+    padding: 0 5px;
+    margin-top: 30px;
+}
+.sign-in-button {
+    background-color: #125ec8;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    /* inputと同様に横幅を調整 */
+    max-width: 500px;
+    width: 100%;
+    transition: background-color .5s;
+}
+.sign-in-button:hover {
+    background-color: #0e4ea8;;
+}
+
+.link {
+    /* thと同様に調整 */
+    margin: 20px 0 10px;
+    padding: 0 5px;
+}
+.sign-up-link {
+    /* aタグのデフォルトの下線をnoneで消す */
+    text-decoration: none;
+    color: #125ec8;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    .form {
+        /* 横幅の調整 */
+        max-width: 250px;
+        width: 100%;
+        margin: 50px auto;
+        /* 余白の調整 */
+        padding: 10px;
+    }
+    .form-headline {
+        /* 文字を小さく */
+        font-size: 20px;
+        /* 余白の調整 */
+        margin: 5px 0 10px;
+    }
+    /* 余白の調整 */
+    .form-table th {
+        margin-top: 10px;
+    }
+    .form-table td {
+        margin-top: 5px;
+    }
+    .form-button {
+        margin-top: 20px;
+    }
+    .link {
+        margin: 10px 0 5px;
+    }
+    .sign-in-button {
+        /* inputのレスポンシブ対応と同様に幅を調整 */
+        min-width: auto;
+        width: 100%;
+        /* 文字を小さく */
+        font-size: 15px;
+    }
+
+}
