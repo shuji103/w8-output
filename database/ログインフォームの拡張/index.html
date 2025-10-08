@@ -24,7 +24,7 @@
     ログインフォームのコーディング
     -->
     <!-- formタグの中に見出し、テーブル、ボタンを配置 -->
-    <form class="form" action="">
+    <form class="form" action="" id="js-form">
         <h1 class="form-headline">Sign in to your account</h1>
         <table class="form-table">
             <tr>
@@ -34,7 +34,7 @@
                     </label>
                 </th>
                 <td>
-                    <input class="input" type="email" id="email" placeholder="name@company.com">
+                    <input class="input js-email" type="email" id="email" name="email" placeholder="name@company.com" autocomplete="username">
                 </td>
             </tr>
             <tr>
@@ -44,15 +44,15 @@
                     </label>
                 </th>
                 <td>
-                    <input class="input" type="password" id="password" placeholder="••••••••">
+                    <input class="input js-password" type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password">
                 </td>
             </tr>
         </table>
         <!-- Sign inのボタン -->
         <!-- ボタンの位置を修正するため、divタグで囲う -->
         <div class="form-button">
-            <!-- 共通のbuttonと、formタグ内のsign-in-buttonのクラスを設定 -->
-            <button class="button sign-in-button" type="submit">Sign in</button>
+            <!-- 共通のbuttonと、sign-in-buttonのクラスを設定 -->
+            <button class="button sign-in-button js-button" type="submit">Sign in</button>
         </div>
         <!-- リンク部分 -->
             <!-- ボタンの位置を修正するため、divタグで囲う -->
@@ -61,5 +61,7 @@
         </div>
     </form>
 
+    <!-- ログイン情報の保存に関する処理 -->
+    <script src="./localstorage.js"></script>
 </body>
 </html>
