@@ -117,8 +117,10 @@ section
 aside
 */
 .aside {
+    max-width: 780px;
     /* 上下左右を調整して、asideタグ全体を見やすく */
-    margin: 100px 250px;
+    width: 100%;
+    margin: 100px auto;
     /* ulタグの周りから紺の背景を別途つけるため、上下左右の間を調整 */
     padding: 25px;
     /* 子要素を中央揃え */
@@ -130,8 +132,10 @@ aside
 }
 @media screen and (max-width: 768px){
     .aside {
+        max-width: 400px;
         /* 余白を小さくして、asideタグ全体を見やすく */
-        margin: 20px 40px;
+        width: 100%;
+        margin: 20px auto;
         /* 紺の背景を小さくするため、ulタグの周りを調整 */
         padding: 10px;
     }
