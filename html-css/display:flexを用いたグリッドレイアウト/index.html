@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--webページのタイトル-->
+    <title>display:flexを用いたグリッドレイアウト</title>
+    <!--雛形にはdescriptionがないため追記-->
+    <meta name="description" content="sample text sample text sample text sample text sample text sample text ...">
+
+    <!-- webフォントのリンク -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- style.cssとsanitize.cssの読み込み -->
+    <link rel="stylesheet" href="./assets/css/sanitize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+    <!--
+    1. 横4 × 縦4のコーディング
+    -->
+    <div class="grid-layout">
+        <ul class="grid grid-col-4">
+            <li class="grid-item">
+                <!-- 流用できるbuttonと、grid内のgrid-buttonのクラスを設定 -->
+                <a href="#" class="button grid-button">01</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">02</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">03</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">04</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">05</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">06</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">07</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">08</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">09</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">10</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">11</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">12</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">13</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">14</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">15</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">16</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--
+    2. 横2 × 縦2のコーディング
+    -->
+    <div class="grid-layout">
+        <ul class="grid grid-col-2">
+            <li class="grid-item">
+                <a href="#" class="button grid-button">01</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">02</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">03</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">04</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--
+    3. 横6 × 縦1のコーディング
+    -->
+    <div class="grid-layout">
+        <ul class="grid grid-col-6">
+            <li class="grid-item">
+                <a href="#" class="button grid-button">01</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">02</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">03</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">04</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">05</a>
+            </li>
+            <li class="grid-item">
+                <a href="#" class="button grid-button">06</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
