@@ -297,7 +297,7 @@ form
     .link {
         margin: 10px 0 5px;
     }
-    .sign-up-button {
+    .sign-in-button {
         /* inputのレスポンシブ対応と同様に幅を調整 */
         min-width: auto;
         width: 100%;
