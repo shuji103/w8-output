@@ -23,8 +23,7 @@
     <!--
     1. 横4 × 縦4のコーディング
     -->
-    <!-- タイトルはつけないため、asideタグにgridを設定 -->
-     <aside class="aside">
+    <div class="grid-layout">
         <ul class="grid grid-col-4">
             <li class="grid-item">
                 <!-- 流用できるbuttonと、grid内のgrid-buttonのクラスを設定 -->
@@ -76,12 +75,12 @@
                 <a href="#" class="button grid-button">16</a>
             </li>
         </ul>
-    </aside>
+    </div>
 
     <!--
     2. 横2 × 縦2のコーディング
     -->
-    <aside class="aside">
+    <div class="grid-layout">
         <ul class="grid grid-col-2">
             <li class="grid-item">
                 <a href="#" class="button grid-button">01</a>
@@ -96,13 +95,13 @@
                 <a href="#" class="button grid-button">04</a>
             </li>
         </ul>
-    </aside>
+    </div>
 
 
     <!--
     3. 横6 × 縦1のコーディング
     -->
-    <aside class="aside">
+    <div class="grid-layout">
         <ul class="grid grid-col-6">
             <li class="grid-item">
                 <a href="#" class="button grid-button">01</a>
@@ -123,51 +122,48 @@
                 <a href="#" class="button grid-button">06</a>
             </li>
         </ul>
-    </aside>
+    </div>
 
     <!--
     ログインフォームのコーディング
     -->
-    <section class="section">
-        <!-- formタグの中に見出し、テーブル、ボタンを配置 -->
-        <form class="form" action="">
-            <h1 class="section-headline">Sign in to your account</h1>
-            <table class="form-table">
-                <tr>
-                    <th>
-                        <label for="email">
-                            Your email
-                        </label>
-                    </th>
-                    <td>
-                        <input class="input" type="email" id="email" placeholder="name@company.com">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="password">
-                            Password
-                        </label>
-                    </th>
-                    <td>
-                        <input class="input" type="password" id="password" placeholder="••••••••">
-                    </td>
-                </tr>
-            </table>
-            <!-- Sign inのボタン -->
+    <!-- formタグの中に見出し、テーブル、ボタンを配置 -->
+    <form class="form" action="">
+        <h1 class="form-headline">Sign in to your account</h1>
+        <table class="form-table">
+            <tr>
+                <th>
+                    <label for="email">
+                        Your email
+                    </label>
+                </th>
+                <td>
+                    <input class="input" type="email" id="email" placeholder="name@company.com">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="password">
+                        Password
+                    </label>
+                </th>
+                <td>
+                    <input class="input" type="password" id="password" placeholder="••••••••">
+                </td>
+            </tr>
+        </table>
+        <!-- Sign inのボタン -->
+        <!-- ボタンの位置を修正するため、divタグで囲う -->
+        <div class="form-button">
+            <!-- 共通のbuttonと、formタグ内のsign-in-buttonのクラスを設定 -->
+            <button class="button sign-in-button" type="submit">Sign in</button>
+        </div>
+        <!-- リンク部分 -->
             <!-- ボタンの位置を修正するため、divタグで囲う -->
-            <div class="form-button">
-                <!-- 共通のbuttonと、formタグ内のsign-in-buttonのクラスを設定 -->
-                <button class="button sign-in-button" type="submit">Sign in</button>
-            </div>
-            <!-- リンク部分 -->
-             <!-- ボタンの位置を修正するため、divタグで囲う -->
-            <div class="link">
-                Don't have an account yet? <a href="#" class="sign-up-link">Sign up</a>
-            </div>
-        </form>
-    </section>
-
+        <div class="link">
+            Don't have an account yet? <a href="#" class="sign-up-link">Sign up</a>
+        </div>
+    </form>
 
 </body>
 </html>
