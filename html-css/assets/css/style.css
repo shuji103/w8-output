@@ -90,8 +90,8 @@ grid-layout
 */
 .grid-layout {
     max-width: 780px;
-    /* 上下左右を調整して、divタグ全体を見やすく */
     width: 100%;
+    /* 上下左右を調整して、divタグ全体を見やすく */
     margin: 100px auto 0;
     /* ulタグの周りから紺の背景を別途つけるため、上下左右の間を調整 */
     padding: 25px;
@@ -105,8 +105,8 @@ grid-layout
 @media screen and (max-width: 768px){
     .grid-layout {
         max-width: 400px;
-        /* 余白を小さくして、divタグ全体を見やすく */
         width: 100%;
+         /* 余白を小さくして、divタグ全体を見やすく */
         margin: 50px auto 0;
         /* 紺の背景を小さくするため、ulタグの周りを調整 */
         padding: 10px;
@@ -193,8 +193,8 @@ form
     display: block;
 }
 .form {
-    /* formタグ自体の横幅を、inputやsign-up-buttonの最大横幅と同じ(max-width: 500px)にすることで、
-    formタグと、中の要素の左右の横幅を揃えて中央揃えに */
+    /* formタグ全体の「横幅」を、inputやsign-up-buttonの最大横幅と同じ(max-width: 500px)にすることで、
+    全体（form）と中身（input, sign-up-button）の左右の「横幅」を揃え、中央揃えに */
     max-width: 500px;
     width: 100%;
     /* 左右自動でmarginを均等配分して、親要素（sectionタグ）の中央に配置 */
